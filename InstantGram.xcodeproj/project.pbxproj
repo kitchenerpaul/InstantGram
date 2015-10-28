@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1700BB271BDFF9CA0059AE3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BB261BDFF9CA0059AE3A /* main.m */; };
 		1700BB2A1BDFF9CA0059AE3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BB291BDFF9CA0059AE3A /* AppDelegate.m */; };
-		1700BB2D1BDFF9CA0059AE3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BB2C1BDFF9CA0059AE3A /* ViewController.m */; };
 		1700BB301BDFF9CA0059AE3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1700BB2E1BDFF9CA0059AE3A /* Main.storyboard */; };
 		1700BB331BDFF9CA0059AE3A /* InstantGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1700BB311BDFF9CA0059AE3A /* InstantGram.xcdatamodeld */; };
 		1700BB351BDFF9CA0059AE3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1700BB341BDFF9CA0059AE3A /* Assets.xcassets */; };
@@ -27,6 +26,10 @@
 		1700BB651BDFFD2D0059AE3A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB641BDFFD2D0059AE3A /* libsqlite3.dylib */; };
 		1700BB671BE009660059AE3A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB661BE009660059AE3A /* Parse.framework */; };
 		1700BB691BE009A00059AE3A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB681BE009A00059AE3A /* Bolts.framework */; };
+		1700BB921BE03C2F0059AE3A /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BB911BE03C2F0059AE3A /* ActivityViewController.m */; };
+		1700BB9E1BE042A10059AE3A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BB9D1BE042A10059AE3A /* ProfileViewController.m */; };
+		1700BBA11BE044340059AE3A /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BBA01BE044340059AE3A /* CameraViewController.m */; };
+		1700BBA41BE044570059AE3A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BBA31BE044570059AE3A /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +47,6 @@
 		1700BB261BDFF9CA0059AE3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1700BB281BDFF9CA0059AE3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1700BB291BDFF9CA0059AE3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1700BB2B1BDFF9CA0059AE3A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1700BB2C1BDFF9CA0059AE3A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1700BB2F1BDFF9CA0059AE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1700BB321BDFF9CA0059AE3A /* InstantGram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstantGram.xcdatamodel; sourceTree = "<group>"; };
 		1700BB341BDFF9CA0059AE3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +67,14 @@
 		1700BB641BDFFD2D0059AE3A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		1700BB661BE009660059AE3A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1700BB681BE009A00059AE3A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		1700BB901BE03C2F0059AE3A /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		1700BB911BE03C2F0059AE3A /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		1700BB9C1BE042A10059AE3A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		1700BB9D1BE042A10059AE3A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		1700BB9F1BE044340059AE3A /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		1700BBA01BE044340059AE3A /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		1700BBA21BE044570059AE3A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		1700BBA31BE044570059AE3A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +129,14 @@
 			isa = PBXGroup;
 			children = (
 				1700BB2E1BDFF9CA0059AE3A /* Main.storyboard */,
-				1700BB2B1BDFF9CA0059AE3A /* ViewController.h */,
-				1700BB2C1BDFF9CA0059AE3A /* ViewController.m */,
+				1700BB901BE03C2F0059AE3A /* ActivityViewController.h */,
+				1700BB911BE03C2F0059AE3A /* ActivityViewController.m */,
+				1700BBA21BE044570059AE3A /* SearchViewController.h */,
+				1700BBA31BE044570059AE3A /* SearchViewController.m */,
+				1700BB9F1BE044340059AE3A /* CameraViewController.h */,
+				1700BBA01BE044340059AE3A /* CameraViewController.m */,
+				1700BB9C1BE042A10059AE3A /* ProfileViewController.h */,
+				1700BB9D1BE042A10059AE3A /* ProfileViewController.m */,
 				1700BB341BDFF9CA0059AE3A /* Assets.xcassets */,
 				1700BB281BDFF9CA0059AE3A /* AppDelegate.h */,
 				1700BB291BDFF9CA0059AE3A /* AppDelegate.m */,
@@ -273,9 +288,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1700BB331BDFF9CA0059AE3A /* InstantGram.xcdatamodeld in Sources */,
-				1700BB2D1BDFF9CA0059AE3A /* ViewController.m in Sources */,
 				1700BB2A1BDFF9CA0059AE3A /* AppDelegate.m in Sources */,
+				1700BB9E1BE042A10059AE3A /* ProfileViewController.m in Sources */,
+				1700BBA11BE044340059AE3A /* CameraViewController.m in Sources */,
 				1700BB271BDFF9CA0059AE3A /* main.m in Sources */,
+				1700BB921BE03C2F0059AE3A /* ActivityViewController.m in Sources */,
+				1700BBA41BE044570059AE3A /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
