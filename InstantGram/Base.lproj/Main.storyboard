@@ -14,6 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="y9a-Dm-MZZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zdt-r9-S9K">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceS-3M-uzp">
@@ -40,7 +41,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="search" id="a1f-mt-kNy"/>
+                    <tabBarItem key="tabBarItem" title="" image="search" id="a1f-mt-kNy">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNq-Gd-aaG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,6 +58,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4oD-5a-Pgo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BDy-I6-kW3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9C-xn-yht">
@@ -81,7 +85,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="camera" id="cYv-Aj-aBH"/>
+                    <tabBarItem key="tabBarItem" title="" image="camera" id="cYv-Aj-aBH">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWY-DP-ShG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,37 +102,115 @@
                         <viewControllerLayoutGuide type="bottom" id="Iul-dG-rVB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rl1-yl-PSI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSf-iJ-h9u">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7ZI-LL-EQn">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kJz-dD-gN4">
+                                    <size key="itemSize" width="125" height="125"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCellID" id="gM4-gO-IAf">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                    </collectionViewCell>
+                                </cells>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="219" width="400" height="332"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="nmq-Zu-3Ns" id="qvv-Zr-W4U"/>
+                                    <outlet property="delegate" destination="nmq-Zu-3Ns" id="7H2-SS-Mlx"/>
+                                </connections>
+                            </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bxl-yq-h1m">
+                                <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="" image="collection"/>
+                                    <segment title="" image="list"/>
+                                    <segment title="" image="map"/>
+                                </segments>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="183" width="400" height="29"/>
+                                </variation>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cCX-eG-V8C">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="28" width="100" height="100"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdn-N3-LRg">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="155" y="289" width="91" height="21"/>
+                                    <rect key="frame" x="20" y="136" width="83" height="21"/>
                                 </variation>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L6z-vu-209">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="140" y="28" width="240" height="128"/>
+                                </variation>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="MSf-iJ-h9u"/>
+                                <exclude reference="7ZI-LL-EQn"/>
+                                <exclude reference="Bxl-yq-h1m"/>
+                                <exclude reference="cCX-eG-V8C"/>
+                                <exclude reference="jdn-N3-LRg"/>
+                                <exclude reference="L6z-vu-209"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="MSf-iJ-h9u"/>
+                                <include reference="7ZI-LL-EQn"/>
+                                <include reference="Bxl-yq-h1m"/>
+                                <include reference="cCX-eG-V8C"/>
+                                <include reference="jdn-N3-LRg"/>
+                                <include reference="L6z-vu-209"/>
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="profile" id="Zbi-Sp-rCt"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile" id="Zbi-Sp-rCt">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="bioTextView" destination="L6z-vu-209" id="l2y-lC-YpX"/>
+                        <outlet property="collectionView" destination="7ZI-LL-EQn" id="rhi-BG-nrB"/>
+                        <outlet property="imageView" destination="cCX-eG-V8C" id="DHj-u2-C6Q"/>
+                        <outlet property="segmentedControl" destination="Bxl-yq-h1m" id="OV6-5c-pAC"/>
+                        <outlet property="usernameLabel" destination="jdn-N3-LRg" id="tbq-xd-svB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3WI-M2-0bv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1960.5" y="1163"/>
+            <point key="canvasLocation" x="2002.5" y="1226"/>
         </scene>
         <!--Activity View Controller-->
         <scene sceneID="OFl-tG-fgL">
@@ -137,6 +221,7 @@
                         <viewControllerLayoutGuide type="bottom" id="XIA-uU-weD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TAS-vz-c87">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYx-Yw-Ry2">
@@ -163,7 +248,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="home" id="9wT-wH-hQH"/>
+                    <tabBarItem key="tabBarItem" title="" image="home" id="9wT-wH-hQH">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjI-8e-L4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,7 +260,7 @@
         <scene sceneID="v6I-yl-0ag">
             <objects>
                 <tabBarController id="7g2-ey-UUC" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="eRo-Kg-F9B">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" id="eRo-Kg-F9B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
@@ -183,7 +270,7 @@
                         <segue destination="9Kh-pI-Jzc" kind="relationship" relationship="viewControllers" id="cXS-pM-aWu"/>
                         <segue destination="0S2-gl-tb7" kind="relationship" relationship="viewControllers" id="EuJ-TN-Y2Y"/>
                         <segue destination="i9n-mX-hVT" kind="relationship" relationship="viewControllers" id="Wfe-EE-el3"/>
-                        <segue destination="nmq-Zu-3Ns" kind="relationship" relationship="viewControllers" id="gbR-hX-lWf"/>
+                        <segue destination="nmq-Zu-3Ns" kind="relationship" relationship="viewControllers" id="UqA-XC-Mcc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NX-tU-cIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,7 +280,10 @@
     </scenes>
     <resources>
         <image name="camera" width="32" height="32"/>
+        <image name="collection" width="32" height="32"/>
         <image name="home" width="32" height="32"/>
+        <image name="list" width="32" height="32"/>
+        <image name="map" width="32" height="32"/>
         <image name="profile" width="32" height="32"/>
         <image name="search" width="32" height="32"/>
     </resources>
