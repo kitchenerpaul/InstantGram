@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7g2-ey-UUC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7g2-ey-UUC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Search View Controller-->
@@ -21,7 +22,7 @@
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="153" y="289" width="95" height="21"/>
@@ -65,15 +66,52 @@
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="150" y="289" width="101" height="21"/>
                                 </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zdq-0i-3mX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNr-66-q0V">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Choose Photo" id="OfF-fV-l4I">
+                                        <connections>
+                                            <action selector="onChooseExistingButtonPressed:" destination="i9n-mX-hVT" id="y3s-xt-VML"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Gp3-Kc-pyz"/>
+                                    <barButtonItem title="Save" id="vlH-LS-lVV">
+                                        <connections>
+                                            <segue destination="ofE-Bb-WLZ" kind="show" id="sAm-qs-Gmj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xby-hG-eVq"/>
+                                    <barButtonItem title="Take Photo" id="laG-vf-zEX">
+                                        <connections>
+                                            <action selector="onTakePhotoButtonPressed:" destination="i9n-mX-hVT" id="W6z-fB-IwT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zdq-0i-3mX" firstAttribute="leading" secondItem="BDy-I6-kW3" secondAttribute="leadingMargin" constant="-20" id="6sg-Fy-2xK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gNr-66-q0V" secondAttribute="trailing" constant="-20" id="DSK-VY-1G2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zdq-0i-3mX" secondAttribute="trailing" constant="-20" id="K0i-QI-IYp"/>
+                            <constraint firstItem="4oD-5a-Pgo" firstAttribute="top" secondItem="Zdq-0i-3mX" secondAttribute="bottom" id="Lsk-7V-WU5"/>
+                            <constraint firstItem="Zdq-0i-3mX" firstAttribute="leading" secondItem="BDy-I6-kW3" secondAttribute="leadingMargin" constant="-20" id="NxR-g2-MId"/>
+                            <constraint firstItem="gNr-66-q0V" firstAttribute="top" secondItem="BDy-I6-kW3" secondAttribute="topMargin" id="bBX-PK-N7l"/>
+                            <constraint firstItem="Zdq-0i-3mX" firstAttribute="top" secondItem="BDy-I6-kW3" secondAttribute="topMargin" id="m1w-WT-9n2"/>
+                            <constraint firstItem="gNr-66-q0V" firstAttribute="leading" secondItem="BDy-I6-kW3" secondAttribute="leadingMargin" constant="-20" id="oNe-Ck-xmI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zdq-0i-3mX" secondAttribute="trailing" constant="-20" id="rvJ-kt-V1r"/>
+                            <constraint firstItem="4oD-5a-Pgo" firstAttribute="top" secondItem="Zdq-0i-3mX" secondAttribute="bottom" id="wkX-kV-e6I"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="X9C-xn-yht"/>
@@ -88,10 +126,72 @@
                     <tabBarItem key="tabBarItem" title="" image="camera" id="cYv-Aj-aBH">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="imageView" destination="Zdq-0i-3mX" id="Rpo-xF-joU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWY-DP-ShG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1038" y="1163"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="h4T-Ev-Yfe">
+            <objects>
+                <viewController id="ofE-Bb-WLZ" customClass="PhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tEh-oy-AKW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z3S-7M-yZB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kgC-AC-HLB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xRR-pP-tZi">
+                                <rect key="frame" x="108" y="28" width="174" height="169"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ek0-iI-0Sf">
+                                <rect key="frame" x="108" y="219" width="384" height="161"/>
+                                <color key="backgroundColor" red="0.82183159719999999" green="0.81312788089999999" blue="0.62559021780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-0O-C1O">
+                                <rect key="frame" x="303" y="104" width="141" height="46"/>
+                                <color key="backgroundColor" red="0.57117316272724095" green="0.76334155248230695" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.22977987385827781" green="0.51817573256930327" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="tag With Location"/>
+                                <connections>
+                                    <action selector="onAddLocationButtonPressed:" destination="ofE-Bb-WLZ" eventType="touchUpInside" id="g64-wB-mUv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfB-pQ-dWO">
+                                <rect key="frame" x="311" y="45" width="133" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ANq-xh-xgX"/>
+                        <barButtonItem title="Share!" id="xRz-zg-8yn">
+                            <connections>
+                                <action selector="onShareButtonTapped:" destination="ofE-Bb-WLZ" id="AAb-UH-Keb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="oDR-nu-yXV"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="ek0-iI-0Sf" id="atJ-hL-1Ld"/>
+                        <outlet property="detailImageView" destination="xRR-pP-tZi" id="v5c-Lx-bqi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Zd-ix-ZEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="1907"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="5cU-rV-giw">
@@ -119,7 +219,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -158,7 +258,7 @@
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="136" width="83" height="21"/>
@@ -228,7 +328,7 @@
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="157" y="289" width="87" height="21"/>

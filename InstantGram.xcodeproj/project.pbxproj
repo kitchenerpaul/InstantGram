@@ -30,6 +30,8 @@
 		1700BB9E1BE042A10059AE3A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BB9D1BE042A10059AE3A /* ProfileViewController.m */; };
 		1700BBA11BE044340059AE3A /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BBA01BE044340059AE3A /* CameraViewController.m */; };
 		1700BBA41BE044570059AE3A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BBA31BE044570059AE3A /* SearchViewController.m */; };
+		4EA645671BE1576E0081B1F7 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA645661BE1576E0081B1F7 /* Photo.m */; };
+		4EA6456A1BE157EB0081B1F7 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA645691BE157EB0081B1F7 /* PhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,10 @@
 		1700BBA01BE044340059AE3A /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		1700BBA21BE044570059AE3A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		1700BBA31BE044570059AE3A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		4EA645651BE1576E0081B1F7 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		4EA645661BE1576E0081B1F7 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		4EA645681BE157EB0081B1F7 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		4EA645691BE157EB0081B1F7 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,11 +141,15 @@
 				1700BBA31BE044570059AE3A /* SearchViewController.m */,
 				1700BB9F1BE044340059AE3A /* CameraViewController.h */,
 				1700BBA01BE044340059AE3A /* CameraViewController.m */,
+				4EA645681BE157EB0081B1F7 /* PhotoViewController.h */,
+				4EA645691BE157EB0081B1F7 /* PhotoViewController.m */,
 				1700BB9C1BE042A10059AE3A /* ProfileViewController.h */,
 				1700BB9D1BE042A10059AE3A /* ProfileViewController.m */,
 				1700BB341BDFF9CA0059AE3A /* Assets.xcassets */,
 				1700BB281BDFF9CA0059AE3A /* AppDelegate.h */,
 				1700BB291BDFF9CA0059AE3A /* AppDelegate.m */,
+				4EA645651BE1576E0081B1F7 /* Photo.h */,
+				4EA645661BE1576E0081B1F7 /* Photo.m */,
 				1700BB361BDFF9CA0059AE3A /* LaunchScreen.storyboard */,
 				1700BB391BDFF9CA0059AE3A /* Info.plist */,
 				1700BB311BDFF9CA0059AE3A /* InstantGram.xcdatamodeld */,
@@ -234,7 +244,7 @@
 				TargetAttributes = {
 					1700BB211BDFF9CA0059AE3A = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = MT7PJU4GKL;
+						DevelopmentTeam = EGY65PWLS7;
 					};
 					1700BB3D1BDFF9CA0059AE3A = {
 						CreatedOnToolsVersion = 7.1;
@@ -291,7 +301,9 @@
 				1700BB2A1BDFF9CA0059AE3A /* AppDelegate.m in Sources */,
 				1700BB9E1BE042A10059AE3A /* ProfileViewController.m in Sources */,
 				1700BBA11BE044340059AE3A /* CameraViewController.m in Sources */,
+				4EA645671BE1576E0081B1F7 /* Photo.m in Sources */,
 				1700BB271BDFF9CA0059AE3A /* main.m in Sources */,
+				4EA6456A1BE157EB0081B1F7 /* PhotoViewController.m in Sources */,
 				1700BB921BE03C2F0059AE3A /* ActivityViewController.m in Sources */,
 				1700BBA41BE044570059AE3A /* SearchViewController.m in Sources */,
 			);
@@ -419,6 +431,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InstantGram",
@@ -427,6 +441,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = paulkitchener.InstantGram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -434,6 +449,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InstantGram",
@@ -442,6 +459,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = paulkitchener.InstantGram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -450,6 +468,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = InstantGramTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = paulkitchener.InstantGramTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -462,6 +481,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = InstantGramTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = paulkitchener.InstantGramTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +508,7 @@
 				1700BB491BDFF9CA0059AE3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1700BB4A1BDFF9CA0059AE3A /* Build configuration list for PBXNativeTarget "InstantGramTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +517,7 @@
 				1700BB4C1BDFF9CA0059AE3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
