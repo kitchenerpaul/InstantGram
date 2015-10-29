@@ -75,12 +75,12 @@
     }
 
     PFObject *photo = [PFObject objectWithClassName:@"Photo"];
-    [photo setObject:[PFUser currentUser] forKey:@"user"];
+//    [photo setObject:[PFUser currentUser] forKey:@"user"];
     [photo setObject:self.photoFile forKey:@"image"];
 
-    PFACL *photoACL = [PFACL ACLWithUser:[PFUser currentUser]];
-    [photoACL setPublicReadAccess:YES];
-    photo.ACL = photoACL;
+//    PFACL *photoACL = [PFACL ACLWithUser:[PFUser currentUser]];
+//    [photoACL setPublicReadAccess:YES];
+//    photo.ACL = photoACL;
 
     self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
