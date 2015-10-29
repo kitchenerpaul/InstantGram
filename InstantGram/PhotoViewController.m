@@ -13,7 +13,7 @@
 #import "Photo.h"
 
 
-@interface PhotoViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
+@interface PhotoViewController () <CLLocationManagerDelegate, MKMapViewDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *detailImageView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
@@ -35,6 +35,7 @@
     self.detailImageView.image = self.post.image;
     [self shouldUploadImage:self.post.image];
 
+    self.descriptionTextView.delegate = self;
 }
 
 -(BOOL)shouldUploadImage:(UIImage *)image {
@@ -75,9 +76,14 @@
     }
 
     PFObject *photo = [PFObject objectWithClassName:@"Photo"];
+
 //    [photo setObject:[PFUser currentUser] forKey:@"user"];
     [photo setObject:self.photoFile forKey:@"image"];
+    [photo setObject:self.descriptionTextView.text forKey:@"photoDescription"];
 
+    if (self.post.userLocation != nil){
+        [photo setObject:[PFGeoPoint geoPointWithLocation:self.post.userLocation] forKey:@"location"];
+    }
 //    PFACL *photoACL = [PFACL ACLWithUser:[PFUser currentUser]];
 //    [photoACL setPublicReadAccess:YES];
 //    photo.ACL = photoACL;
@@ -101,6 +107,8 @@
     self.locationManager.delegate = self;
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager startUpdatingLocation];
+    [self.descriptionTextView resignFirstResponder];
+
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
