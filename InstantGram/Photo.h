@@ -17,6 +17,7 @@
 @property NSString *photoDescription;
 @property CLLocation *userLocation;
 @property NSNumber *likes;
+@property NSString *timeStamp;
 
 -(instancetype)initWithPhoto:(UIImage *)photo;
 

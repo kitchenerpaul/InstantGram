@@ -19,6 +19,7 @@
 		1700BBA11BE044340059AE3A /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BBA01BE044340059AE3A /* CameraViewController.m */; };
 		1700BBA41BE044570059AE3A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BBA31BE044570059AE3A /* SearchViewController.m */; };
 		17767D591BE2AFCD00A26396 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17767D581BE2AFCD00A26396 /* LoginViewController.m */; };
+		17767D5C1BE2D32A00A26396 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17767D5B1BE2D32A00A26396 /* PhotoCollectionViewCell.m */; };
 		4085C949700FA8A7188E311E /* libPods-InstantGram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D45C64E2BAB41A2B5B82101 /* libPods-InstantGram.a */; };
 		4EA645671BE1576E0081B1F7 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA645661BE1576E0081B1F7 /* Photo.m */; };
 		4EA6456A1BE157EB0081B1F7 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA645691BE157EB0081B1F7 /* PhotoViewController.m */; };
@@ -57,6 +58,8 @@
 		1700BBA31BE044570059AE3A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		17767D571BE2AFCD00A26396 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		17767D581BE2AFCD00A26396 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		17767D5A1BE2D32A00A26396 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		17767D5B1BE2D32A00A26396 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		3D45C64E2BAB41A2B5B82101 /* libPods-InstantGram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstantGram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA645651BE1576E0081B1F7 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		4EA645661BE1576E0081B1F7 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				1700BB2E1BDFF9CA0059AE3A /* Main.storyboard */,
+				17767D5A1BE2D32A00A26396 /* PhotoCollectionViewCell.h */,
+				17767D5B1BE2D32A00A26396 /* PhotoCollectionViewCell.m */,
 				4EA645651BE1576E0081B1F7 /* Photo.h */,
 				4EA645661BE1576E0081B1F7 /* Photo.m */,
 				1700BB281BDFF9CA0059AE3A /* AppDelegate.h */,
@@ -333,6 +338,7 @@
 				1700BB2A1BDFF9CA0059AE3A /* AppDelegate.m in Sources */,
 				1700BB9E1BE042A10059AE3A /* ProfileViewController.m in Sources */,
 				1700BBA11BE044340059AE3A /* CameraViewController.m in Sources */,
+				17767D5C1BE2D32A00A26396 /* PhotoCollectionViewCell.m in Sources */,
 				17767D591BE2AFCD00A26396 /* LoginViewController.m in Sources */,
 				4EA645671BE1576E0081B1F7 /* Photo.m in Sources */,
 				1700BB271BDFF9CA0059AE3A /* main.m in Sources */,
