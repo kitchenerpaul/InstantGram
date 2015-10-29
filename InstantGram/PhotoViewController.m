@@ -8,6 +8,7 @@
 
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <Parse/Parse.h>
 #import "PhotoViewController.h"
 #import "Photo.h"
 
@@ -20,6 +21,10 @@
 @property CLLocationManager *locationManager;
 @property BOOL didFind;
 
+@property PFFile *photoFile;
+@property UIBackgroundTaskIdentifier fileUploadBackgroundTaskId;
+@property UIBackgroundTaskIdentifier photoPostBackgroundTaskId;
+
 @end
 
 @implementation PhotoViewController
@@ -28,12 +33,66 @@
     [super viewDidLoad];
 
     self.detailImageView.image = self.post.image;
+    [self shouldUploadImage:self.post.image];
 
+}
+
+-(BOOL)shouldUploadImage:(UIImage *)image {
+
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
+
+    if (!imageData) {
+        return NO;
+    } else {
+        self.photoFile = [PFFile fileWithData:imageData];
+    }
+
+    self.fileUploadBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [[UIApplication sharedApplication] endBackgroundTask:self.fileUploadBackgroundTaskId];
+    }];
+
+    [self.photoFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+        [[UIApplication sharedApplication] endBackgroundTask:self.fileUploadBackgroundTaskId];
+    }];
+
+    return YES;
+
+}
+
+- (void)cancelButtonAction:(id)sender {
+    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)onShareButtonTapped:(id)sender {
 
-    // save Photo object to parse
+    if (!self.photoFile) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Couldn't post your photo" message:nil preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:okay];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+
+    PFObject *photo = [PFObject objectWithClassName:@"Photo"];
+    [photo setObject:[PFUser currentUser] forKey:@"user"];
+    [photo setObject:self.photoFile forKey:@"image"];
+
+    PFACL *photoACL = [PFACL ACLWithUser:[PFUser currentUser]];
+    [photoACL setPublicReadAccess:YES];
+    photo.ACL = photoACL;
+
+    self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
+    }];
+
+    [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"Photo Uploaded");
+        }
+    }];
+
+    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
 
 }
 

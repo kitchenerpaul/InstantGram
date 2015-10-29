@@ -22,9 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//
-//    CGRect frame= self.segmentedControl.frame;
-//    [self.segmentedControl setFrame:CGRectMake(frame.origin.x, frame.origin.y, 400, 50)];
+
+
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

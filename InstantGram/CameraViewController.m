@@ -10,12 +10,12 @@
 #import "Photo.h"
 #import "PhotoViewController.h"
 #import "CameraViewController.h"
+#import <Parse/Parse.h>
 
 
 @interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property BOOL newMedia;
 @property Photo *post;
 
 @end
