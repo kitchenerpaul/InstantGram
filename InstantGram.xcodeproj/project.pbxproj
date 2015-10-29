@@ -14,18 +14,6 @@
 		1700BB351BDFF9CA0059AE3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1700BB341BDFF9CA0059AE3A /* Assets.xcassets */; };
 		1700BB381BDFF9CA0059AE3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1700BB361BDFF9CA0059AE3A /* LaunchScreen.storyboard */; };
 		1700BB431BDFF9CA0059AE3A /* InstantGramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BB421BDFF9CA0059AE3A /* InstantGramTests.m */; };
-		1700BB531BDFFC0D0059AE3A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB521BDFFC0D0059AE3A /* AudioToolbox.framework */; };
-		1700BB551BDFFC1D0059AE3A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB541BDFFC1D0059AE3A /* CFNetwork.framework */; };
-		1700BB571BDFFC2B0059AE3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB561BDFFC2B0059AE3A /* CoreGraphics.framework */; };
-		1700BB591BDFFC390059AE3A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB581BDFFC390059AE3A /* CoreLocation.framework */; };
-		1700BB5B1BDFFC460059AE3A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB5A1BDFFC460059AE3A /* QuartzCore.framework */; };
-		1700BB5D1BDFFC520059AE3A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB5C1BDFFC520059AE3A /* Security.framework */; };
-		1700BB5F1BDFFC6B0059AE3A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB5E1BDFFC6B0059AE3A /* StoreKit.framework */; };
-		1700BB611BDFFC7F0059AE3A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB601BDFFC7F0059AE3A /* SystemConfiguration.framework */; };
-		1700BB631BDFFCFA0059AE3A /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB621BDFFCFA0059AE3A /* libz.1.dylib */; };
-		1700BB651BDFFD2D0059AE3A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB641BDFFD2D0059AE3A /* libsqlite3.dylib */; };
-		1700BB671BE009660059AE3A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB661BE009660059AE3A /* Parse.framework */; };
-		1700BB691BE009A00059AE3A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700BB681BE009A00059AE3A /* Bolts.framework */; };
 		1700BB921BE03C2F0059AE3A /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BB911BE03C2F0059AE3A /* ActivityViewController.m */; };
 		1700BB9E1BE042A10059AE3A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BB9D1BE042A10059AE3A /* ProfileViewController.m */; };
 		1700BBA11BE044340059AE3A /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1700BBA01BE044340059AE3A /* CameraViewController.m */; };
@@ -95,18 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1700BB651BDFFD2D0059AE3A /* libsqlite3.dylib in Frameworks */,
-				1700BB631BDFFCFA0059AE3A /* libz.1.dylib in Frameworks */,
-				1700BB611BDFFC7F0059AE3A /* SystemConfiguration.framework in Frameworks */,
-				1700BB691BE009A00059AE3A /* Bolts.framework in Frameworks */,
-				1700BB5F1BDFFC6B0059AE3A /* StoreKit.framework in Frameworks */,
-				1700BB5D1BDFFC520059AE3A /* Security.framework in Frameworks */,
-				1700BB5B1BDFFC460059AE3A /* QuartzCore.framework in Frameworks */,
-				1700BB591BDFFC390059AE3A /* CoreLocation.framework in Frameworks */,
-				1700BB571BDFFC2B0059AE3A /* CoreGraphics.framework in Frameworks */,
-				1700BB551BDFFC1D0059AE3A /* CFNetwork.framework in Frameworks */,
-				1700BB531BDFFC0D0059AE3A /* AudioToolbox.framework in Frameworks */,
-				1700BB671BE009660059AE3A /* Parse.framework in Frameworks */,
 				4085C949700FA8A7188E311E /* libPods-InstantGram.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +260,7 @@
 				TargetAttributes = {
 					1700BB211BDFF9CA0059AE3A = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = EGY65PWLS7;
+						DevelopmentTeam = MT7PJU4GKL;
 					};
 					1700BB3D1BDFF9CA0059AE3A = {
 						CreatedOnToolsVersion = 7.1;
