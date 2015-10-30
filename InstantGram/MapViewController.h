@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface MapViewController : UIViewController
 
+@property CLLocation *pictureLocation;
+
 @end
+

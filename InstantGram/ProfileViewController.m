@@ -12,6 +12,7 @@
 #import "Photo.h"
 #import "PhotoCollectionViewCell.h"
 #import "PhotoViewController.h"
+#import "MapViewController.h"
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -21,6 +22,8 @@
 
 @property NSMutableArray *cellPhotos;
 
+@property NSString *usernameString;
+
 @end
 
 @implementation ProfileViewController
@@ -28,14 +31,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _loadData];
-
-}
-
--(void)viewDidAppear:(BOOL)animated {
     [self queryForTable];
+
+
 }
-
-
 
 
 - (IBAction)logoutButton:(id)sender {
@@ -47,7 +46,8 @@
 
 -(void)updateCollectionViewWithPhoto:(Photo *)photo{
         NSLog(@"cell photos array count -> %lu", self.cellPhotos.count);
-    [self.cellPhotos addObject:photo];
+    [self.cellPhotos insertObject:photo atIndex:0];
+
     [self.collectionView reloadData];
     NSLog(@"cell photos array count -> %lu", self.cellPhotos.count);
     NSLog(@"photo -> %@", photo);
@@ -82,6 +82,9 @@
     }];
 
     self.usernameLabel.text = [[PFUser currentUser] objectForKey:@"userName"];
+    self.usernameString = [NSString new];
+    self.usernameString = self.usernameLabel.text;
+
 }
 
 - (PFQuery *)queryForTable {
@@ -90,14 +93,15 @@
     PFQuery *currentUserPhotosQuery = [PFQuery queryWithClassName:@"Photo"];
     NSString *userID = [PFUser currentUser].objectId;
     [currentUserPhotosQuery whereKey:@"userID" equalTo:userID];
-    [currentUserPhotosQuery whereKeyExists:@"image"];
+//    [currentUserPhotosQuery whereKeyExists:@"image"];
+    [currentUserPhotosQuery orderByDescending:@"createdAt"];
 
     [currentUserPhotosQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         NSLog(@"objects found --> %lu", objects.count);
 //        [self.collectionView reloadData];
 
         for (PFObject *object in objects) {
-
+            NSLog(@"%%%%%% ---> %@ // %@", object.objectId, object.createdAt);
             Photo *thisPhoto = [Photo new];
             PFFile *image = [object objectForKey:@"image"];
             [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
@@ -106,6 +110,7 @@
                         thisPhoto.image = [UIImage imageWithData:data];
 
                         NSDate *date = object.createdAt;
+                        NSLog(@"date -> %@", date);
                         if (date.timeIntervalSinceNow/-3600 < 1) {
                             thisPhoto.timeStamp = [NSString stringWithFormat:@"%.f minutes ago", date.timeIntervalSinceNow/-60];
                         } else {
@@ -113,11 +118,13 @@
                         }
                         NSLog(@"timeStamp --> %@", thisPhoto.timeStamp);
                         
+                        CLLocation * loc = [object objectForKey:@"location"];
+                        thisPhoto.userLocation = loc;
 
-                        [self.cellPhotos addObject:thisPhoto];
-                        [self.collectionView reloadData];
                     });
-                    
+
+                    [self.cellPhotos addObject:thisPhoto];
+                    [self.collectionView reloadData];
 
                 } else {
                     NSLog(@"error: %@ %@", error, [error userInfo]);
@@ -131,7 +138,6 @@
 }
 
 
-
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.cellPhotos.count;
 }
@@ -139,11 +145,23 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewCellID" forIndexPath:indexPath];
     Photo *photo = [self.cellPhotos objectAtIndex:indexPath.row];
+    
     cell.mainPhotoImageView.image = photo.image;
     cell.timeLabel.text = photo.timeStamp;
-
+    cell.userNameLabel.text = @"Paul Kitchener";
 
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"MapViewSegue"]){
+        MapViewController *dvc = segue.destinationViewController;
+        NSArray *arrayOfIndexPaths = [self.collectionView indexPathsForSelectedItems];
+        NSIndexPath *photoIndex = [arrayOfIndexPaths firstObject];
+        Photo *photo = [self.cellPhotos objectAtIndex:photoIndex.row];
+        NSLog(@"%@", photo);
+        dvc.pictureLocation = photo.userLocation;
+    }
 }
 
 -(IBAction)unwindToProfileVC:(UIStoryboardSegue *)segue {

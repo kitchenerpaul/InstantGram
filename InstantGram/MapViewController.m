@@ -6,9 +6,12 @@
 //  Copyright © 2015 Paul Kitchener. All rights reserved.
 //
 
+#import <MapKit/MapKit.h>
 #import "MapViewController.h"
 
+
 @interface MapViewController ()
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -16,22 +19,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.mapView.region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(41.87808499, -87.6329), 40000, 50000);
+    [self dropPins];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)dropPins{
+
+    CLLocation *pinLocation = [[CLLocation alloc] initWithLatitude:[[self.pictureLocation valueForKey:@"latitude"] doubleValue] longitude:[[self.pictureLocation valueForKey:@"longitude"] doubleValue]];
+    MKPointAnnotation *annotation = [MKPointAnnotation new];
+    annotation.coordinate = pinLocation.coordinate;
+
+    [self.mapView addAnnotation:annotation];
+
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//- (MKAnnotationView ​*)mapView:(MKMapView *​)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
+//{
+//    MKPinAnnotationView *customPinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
+//    customPinView.animatesDrop = YES;
+//    return customPinView;
+//}
+
+
 
 @end
