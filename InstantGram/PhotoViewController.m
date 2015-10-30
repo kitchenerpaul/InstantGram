@@ -77,16 +77,19 @@
 
     PFObject *photo = [PFObject objectWithClassName:@"Photo"];
 
-//    [photo setObject:[PFUser currentUser] forKey:@"user"];
+    [photo setObject:[PFUser currentUser].objectId forKey:@"userID"];
     [photo setObject:self.photoFile forKey:@"image"];
     [photo setObject:self.descriptionTextView.text forKey:@"photoDescription"];
 
     if (self.post.userLocation != nil){
         [photo setObject:[PFGeoPoint geoPointWithLocation:self.post.userLocation] forKey:@"location"];
     }
+
+    // ACL
 //    PFACL *photoACL = [PFACL ACLWithUser:[PFUser currentUser]];
 //    [photoACL setPublicReadAccess:YES];
 //    photo.ACL = photoACL;
+    ///
 
     self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
@@ -97,6 +100,12 @@
             NSLog(@"Photo Uploaded");
         }
     }];
+
+//    PFUser *user = [PFUser currentUser];
+//    PFRelation *relation = [user relationForKey:@"Photo"];
+//    [relation addObject:photo];
+//    [user saveInBackground];
+
 
     [self.delegate addPhotoToCollectionView:self.post];
     [self.parentViewController dismissViewControllerAnimated:YES completion:nil];

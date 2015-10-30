@@ -17,7 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @property NSMutableArray *cellPhotos;
@@ -89,12 +88,13 @@
 
     self.cellPhotos = [NSMutableArray new];
     PFQuery *currentUserPhotosQuery = [PFQuery queryWithClassName:@"Photo"];
-//    [currentUserPhotosQuery whereKey:@"user" equalTo:[PFUser currentUser]];
-//    [currentUserPhotosQuery whereKeyExists:@"image"];
+    NSString *userID = [PFUser currentUser].objectId;
+    [currentUserPhotosQuery whereKey:@"userID" equalTo:userID];
+    [currentUserPhotosQuery whereKeyExists:@"image"];
 
     [currentUserPhotosQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         NSLog(@"objects found --> %lu", objects.count);
-        [self.collectionView reloadData];
+//        [self.collectionView reloadData];
 
         for (PFObject *object in objects) {
 
@@ -102,22 +102,28 @@
             PFFile *image = [object objectForKey:@"image"];
             [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
                 if (!error) {
-                    thisPhoto.image = [UIImage imageWithData:data];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        thisPhoto.image = [UIImage imageWithData:data];
+
+                        NSDate *date = object.createdAt;
+                        if (date.timeIntervalSinceNow/-3600 < 1) {
+                            thisPhoto.timeStamp = [NSString stringWithFormat:@"%.f minutes ago", date.timeIntervalSinceNow/-60];
+                        } else {
+                            thisPhoto.timeStamp = [NSString stringWithFormat:@"%.f hours ago", date.timeIntervalSinceNow/-3600];
+                        }
+                        NSLog(@"timeStamp --> %@", thisPhoto.timeStamp);
+                        
+
+                        [self.cellPhotos addObject:thisPhoto];
+                        [self.collectionView reloadData];
+                    });
+                    
+
                 } else {
                     NSLog(@"error: %@ %@", error, [error userInfo]);
                 }
             }];
-            NSDate *date = object.createdAt;
-            if (date.timeIntervalSinceNow/-3600 < 1) {
-                thisPhoto.timeStamp = [NSString stringWithFormat:@"%.f minutes ago", date.timeIntervalSinceNow/-60];
-            } else {
-            thisPhoto.timeStamp = [NSString stringWithFormat:@"%.f hours ago", date.timeIntervalSinceNow/-3600];
-            }
-            NSLog(@"timeStamp --> %@", thisPhoto.timeStamp);
-
-            [self.cellPhotos addObject:thisPhoto];
-            [self.collectionView reloadData];
-        }
+                    }
     }];
 
     NSLog(@"In photos array: %@", self.cellPhotos);
