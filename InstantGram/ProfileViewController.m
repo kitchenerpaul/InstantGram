@@ -36,6 +36,9 @@
     [self queryForTable];
 }
 
+
+
+
 - (IBAction)logoutButton:(id)sender {
     [PFUser logOut];
     [FBSDKAccessToken setCurrentAccessToken:nil];
@@ -121,6 +124,8 @@
     return currentUserPhotosQuery;
 }
 
+
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.cellPhotos.count;
 }
@@ -133,6 +138,10 @@
 
 
     return cell;
+}
+
+-(IBAction)unwindToProfileVC:(UIStoryboardSegue *)segue {
+    
 }
 
 @end
