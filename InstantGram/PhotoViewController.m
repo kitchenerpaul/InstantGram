@@ -98,6 +98,7 @@
         }
     }];
 
+    [self.delegate addPhotoToCollectionView:self.post];
     [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
 
 }

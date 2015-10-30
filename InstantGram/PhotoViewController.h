@@ -10,8 +10,16 @@
 
 @class Photo;
 
+@protocol PhotoViewControllerDelegate <NSObject>
+
+-(void)addPhotoToCollectionView:(Photo *)photo;
+
+@end
+
 @interface PhotoViewController : UIViewController
 
 @property Photo *post;
+@property (nonatomic, assign) id<PhotoViewControllerDelegate> delegate;
+
 
 @end

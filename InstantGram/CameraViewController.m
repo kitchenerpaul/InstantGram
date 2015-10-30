@@ -10,6 +10,7 @@
 #import "Photo.h"
 #import "PhotoViewController.h"
 #import "CameraViewController.h"
+#import "TabBarController.h"
 #import <Parse/Parse.h>
 
 
@@ -75,6 +76,7 @@ finishedSavingWithError:(NSError *)error
     if ([segue.identifier isEqualToString: @"DetailPhotoViewer"]){
         PhotoViewController *dvc = segue.destinationViewController;
         dvc.post = self.post;
+        dvc.delegate = (TabBarController<PhotoViewControllerDelegate> *)self.parentViewController;
     }
 }
 
