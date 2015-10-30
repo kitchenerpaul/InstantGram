@@ -23,6 +23,7 @@
 		17767D621BE3C38700A26396 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17767D611BE3C38700A26396 /* TabBarController.m */; };
 		17767D641BE3D1F400A26396 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17767D631BE3D1F400A26396 /* CoreLocation.framework */; };
 		17767D661BE3D1FB00A26396 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17767D651BE3D1FB00A26396 /* MapKit.framework */; };
+		17767D691BE3DD2C00A26396 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17767D681BE3DD2C00A26396 /* MapViewController.m */; };
 		4085C949700FA8A7188E311E /* libPods-InstantGram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D45C64E2BAB41A2B5B82101 /* libPods-InstantGram.a */; };
 		4EA645671BE1576E0081B1F7 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA645661BE1576E0081B1F7 /* Photo.m */; };
 		4EA6456A1BE157EB0081B1F7 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA645691BE157EB0081B1F7 /* PhotoViewController.m */; };
@@ -67,6 +68,8 @@
 		17767D611BE3C38700A26396 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		17767D631BE3D1F400A26396 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		17767D651BE3D1FB00A26396 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		17767D671BE3DD2C00A26396 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		17767D681BE3DD2C00A26396 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		3D45C64E2BAB41A2B5B82101 /* libPods-InstantGram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstantGram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA645651BE1576E0081B1F7 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		4EA645661BE1576E0081B1F7 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				4EA645691BE157EB0081B1F7 /* PhotoViewController.m */,
 				1700BB9C1BE042A10059AE3A /* ProfileViewController.h */,
 				1700BB9D1BE042A10059AE3A /* ProfileViewController.m */,
+				17767D671BE3DD2C00A26396 /* MapViewController.h */,
+				17767D681BE3DD2C00A26396 /* MapViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				17767D5C1BE2D32A00A26396 /* PhotoCollectionViewCell.m in Sources */,
 				17767D591BE2AFCD00A26396 /* LoginViewController.m in Sources */,
 				4EA645671BE1576E0081B1F7 /* Photo.m in Sources */,
+				17767D691BE3DD2C00A26396 /* MapViewController.m in Sources */,
 				1700BB271BDFF9CA0059AE3A /* main.m in Sources */,
 				4EA6456A1BE157EB0081B1F7 /* PhotoViewController.m in Sources */,
 				17767D621BE3C38700A26396 /* TabBarController.m in Sources */,
