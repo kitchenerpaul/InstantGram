@@ -43,8 +43,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)addPhotoToCollectionView:(Photo *)photo toArray:(NSMutableArray *)array{
-    
+-(void)updateCollectionViewWithPhoto:(Photo *)photo{
+        NSLog(@"cell photos array count -> %lu", self.cellPhotos.count);
+    [self.cellPhotos addObject:photo];
+    [self.collectionView reloadData];
+    NSLog(@"cell photos array count -> %lu", self.cellPhotos.count);
+    NSLog(@"photo -> %@", photo);
+
 }
 
 - (void)_loadData {

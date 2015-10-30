@@ -76,7 +76,7 @@ finishedSavingWithError:(NSError *)error
     if ([segue.identifier isEqualToString: @"DetailPhotoViewer"]){
         PhotoViewController *dvc = segue.destinationViewController;
         dvc.post = self.post;
-        dvc.delegate = (TabBarController<PhotoViewControllerDelegate> *)self.parentViewController;
+        dvc.delegate = (TabBarController<PhotoViewControllerDelegate> *) self.parentViewController;
     }
 }
 

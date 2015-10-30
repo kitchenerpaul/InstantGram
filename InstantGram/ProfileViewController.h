@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photo.h"
 
 @interface ProfileViewController : UIViewController
+
+@property Photo *photo;
+
+-(void)updateCollectionViewWithPhoto:(Photo *)photo;
 
 @end
